@@ -1,0 +1,21 @@
+Pour écrire une fonction, utilisez:
+2*x         --> 2x
+2*x**2      --> 2x²
+sqrt(x)     --> √(x)
+(ln(x))**2  --> ln²(x)
+les sympboles et significations
+
+" *x "   --> "x"
+" x**2 " --> "x²"
+" x** "  --> " x^ "
+Exemple: 3**2=9 5**2=25
+" x**3 " --> "x^(3)"
+" x**4 " --> "x^(4)"
+")*("    -->  ")("
+sqrt(x)  --> √(x)
+-sqrt(x)  --> -√(x)
+
+Dans "Ensemble des solutions d'une équation" l'équation est éguale à 0:
+Exemple:  x²-1=0    x²-3x+4=0
+
+Dans les versions futur les écritures seront améliorées.

@@ -1,0 +1,747 @@
+MDScreen:
+    name: "operation_screen"
+    operation_a_input_par_user:operation_a_input_par_user
+    operation_name:operation_name
+    MDFloatLayout:
+        md_bg_color: "black"
+        pos_hint: {"center_x": .5, "center_y": .5}
+        MDNavigationLayout:
+            id: drawer_cha
+            ScreenManager:
+                id: scr_cha
+                MDScreen:
+                    id: type_operation
+                    name: "nom_operation"
+                    MDFloatLayout:
+                        md_bg_color: "black"
+                        pos_hint : {"center_x": .5, "center_y": .5}
+                        Image:
+                            source: "accueil_image.jpg"
+                            pos_hint: {"center_x": .5, "center_y": .5}
+                            size_hint: 2, 2
+                        MDTopAppBar:
+                            size_hint: 1, .09
+                            pos_hint: {"top": 1, "centerx": .5}
+                            md_bg_color: "black"
+                            halign: "center"
+                            title: "Operation Mathematique"
+                            #left_action_items: [["menu", lambda x: drawer_cha.set_state("open")]]
+                            # left_action_items: [["", ]]
+                            right_action_items: [["dots-vertical", lambda x: app.apropos_use_app()]]
+                            padding: 10
+                        MDLabel:
+                            id: info_presentation1
+                            text: "Découvrez notre application de calcul mathématique :"
+                            theme_text_color: "Custom"
+                            text_color: "white"
+                            font_size: "18sp"
+                            halign: "center"
+                            pos_hint: {"center_y": .85, "center_x": .5}
+                        MDLabel:
+                            id: info_presentation2
+                            text: "app.info_presentation2"
+                            theme_text_color: "Custom"
+                            text_color: "white"
+                            font_size: "18sp"
+                            halign: "center"
+                            size_hint_x: .8
+                            pos_hint: {"center_y": .6, "center_x": .5}
+                        MDLabel:
+                            id: info_presentation3
+                            text: "Optimisez vos calculs avec notre application !"
+                            theme_text_color: "Custom"
+                            text_color: "white"
+                            font_size: "18sp"
+                            halign: "center"
+                            pos_hint: {"center_y": .3, "center_x": .5}
+                        Button:
+                            text: "Continuer"
+                            theme_text_color: "Custom"
+                            text_color: "white"
+                            font_size: "20sp"
+                            halign: "center"
+                            size_hint: .6, .1
+                            pos_hint: {"center_y": .2, "center_x": .5}
+                            on_release:
+                                drawer_cha.set_state("open")
+                                 
+                MDScreen:
+                    name: "about_us"
+                    MDFloatLayout:
+                        md_bg_color: "black"
+                        Image:
+                            source: "logo6_16_21816.png"
+                            size_hint: 1, 1
+                            pos_hint: {"center_x": .5, "center_x": .5}
+                        MDTopAppBar:
+                            id: about_us_title
+                            title: "Contacter Nous"
+                            padding: 10
+                            size_hint: 1, .09
+                            pos_hint: {"top": 1, "centerx": .5}
+                            md_bg_color: "gray"
+                            halign: "center"
+                            left_action_items: [["menu", lambda x: drawer_cha.set_state("open")]]
+                            right_action_items: [["dots-vertical", lambda x: app.apropos_use_app()]]     
+                        MDLabel:
+                            id: thank_user
+                            text: "C'est à avec plaisir que nous sachons que vous aimez nos produits."
+                            theme_text_color: "Custom"
+                            text_color: "white"
+                            font_size: "18sp"
+                            halign: "center"
+                            pos_hint: {"center_y": .85, "center_x": .5}
+                        MDLabel:
+                            id: thank_user_feelback
+                            text: "Merci d'envoyer vos avis à propos de nos produits,pour que ses derniers soient ameliorer."
+                            theme_text_color: "Custom"
+                            text_color: "white"
+                            font_size: "18sp"
+                            halign: "center"
+                            pos_hint: {"center_y": .7, "center_x": .5}
+                        MDLabel:
+                            id: thank_user_new
+                            text: "Merci de nous contacter :"
+                            theme_text_color: "Custom"
+                            text_color: "white"
+                            font_size: "20sp"
+                            halign: "center"
+                            pos_hint: {"center_y": .25, "center_x": .5}
+                        MDTextButton:
+                            text: "Telegram:"
+                            theme_text_color: "Custom"
+                            text_color: "white"
+                            font_size: "18sp"
+                            halign: "center"
+                            pos_hint: {"center_y": .12, "center_x": .15}
+                            ###on_release:app.contater_nous(index=1)
+
+                        MDTextButton:
+                            text: "https://t.me/Thekingdynamo"
+                            theme_text_color: "Custom"
+                            text_color: "orange"
+                            font_size: "18sp"
+                            halign: "center"
+                            pos_hint: {"center_y": .12, "center_x": .6}
+                            ###on_release: app.contater_nous(index=2)
+                MDScreen:
+                    name:"operation_1"
+                    MDFloatLayout:
+                        md_bg_color: "black"
+                        Image:
+                            source: "accueil_image.jpg"
+                            pos_hint: {"center_x": .5, "center_y": .5}
+                            size_hint: 2, 2
+                        MDTopAppBar:
+                            id: operation_name
+                            title: "Operation1"
+                            left_action_items: [["menu", lambda x: drawer_cha.set_state("open")]]
+                            right_action_items: [["dots-vertical", lambda x: app.apropos_use_app()]]
+                            md_bg_color: "gray"
+                            theme_text_color: "Custom"
+                            title_color: "black"
+                            pos_hint: {"center_x": .5, "top": 1}
+                            left_action_items_pos_hint: {"center_y": .5}
+                        MDLabel:
+                            id: operation_a_input_par_user
+                            text: "Veuillez saisir une expression mathématique"
+                            theme_text_color: "Custom"
+                            font_size: "25sp"
+                            text_color: "white"
+                            #md_bg_color: "gray"
+                            halign: "center"
+                            size_hint: .85, .25
+                            pos_hint: {"center_x": .5, "top": .85}
+                        MDTextButton:
+                            id: execution_action_op
+                            text: "Solution"
+                            pos_hint: {"center_x": .5, "top": .58}
+                            theme_text_color: "Custom"
+                            text_color: "white"
+                            font_size: "30sp"
+                            ###on_release: app.execution_operation()
+                        MDFloatLayout:
+                            size_hint: 1, .5 
+                            orientation: "vertical"
+                            Image:
+                                source: "accueil_image.jpg"
+                                pos_hint: {"center_x": .5, "center_y": .5}
+                                
+                            ScrollView:
+                                do_scroll_x: False
+                                do_scroll_y: True
+                                pos_hint: {"center_x": .5, "top": 1}
+                                size_hint: 1, 1
+                                halign: "center"
+                                scroll_size_y: None
+                                
+                                MDGridLayout:
+                                    id: all_buttons
+                                    md_bg_color: "black"
+                                    halign: "center"
+                                    cols: 4
+                                    orientation: "lr-tb"
+                                    pos_hint: {"center_x": .5, "center_y": .5}
+                                    padding: 10
+                                    spacing : 10
+                                    MDIconButton:
+                                        id: no
+                                        size_hint: .25, .25
+                                        halign: "center"
+                                        icon: "numeric-1"
+                                        theme_text_color: "Custom"
+                                        icon_color: "black"
+                                        md_bg_color: "gray"
+                                        icon_size: "40dp"
+                                        ###on_release: app.numeric(index=1)
+                                    MDIconButton:
+                                        id: no
+                                        size_hint: .25, .25
+                                        halign: "center"
+                                        icon: "numeric-2"
+                                        theme_text_color: "Custom"
+                                        icon_color: "black"
+                                        md_bg_color: "gray"
+                                        icon_size: "40dp"
+                                        ###on_release: app.numeric(index=2)
+                                    MDIconButton:
+                                        id: no
+                                        size_hint: .25, .25
+                                        halign: "center"
+                                        icon: "numeric-3"
+                                        theme_text_color: "Custom"
+                                        icon_color: "black"
+                                        md_bg_color: "gray"
+                                        icon_size: "40dp"
+                                        ###on_release: app.numeric(index=3)
+                                    MDIconButton:
+                                        id: no
+                                        size_hint: .25, .25
+                                        halign: "center"
+                                        icon: "arrow-u-left-bottom"
+                                        theme_text_color: "Custom"
+                                        icon_color: "black"
+                                        md_bg_color: "gray"
+                                        icon_size: "40dp"
+                                        ###on_release: app.clean()
+                                    MDIconButton:
+                                        id: no
+                                        size_hint: .25, .25
+                                        halign: "center"
+                                        icon: "numeric-4"
+                                        theme_text_color: "Custom"
+                                        icon_color: "black"
+                                        md_bg_color: "gray"
+                                        icon_size: "40dp"
+                                        ###on_release: app.numeric(index=4)
+                                    MDIconButton:
+                                        id: no
+                                        size_hint: .25, .25
+                                        halign: "center"
+                                        icon: "numeric-5"
+                                        theme_text_color: "Custom"
+                                        icon_color: "black"
+                                        md_bg_color: "gray"
+                                        icon_size: "40dp"
+                                        ###on_release: app.numeric(index=5)
+                                    MDIconButton:
+                                        id: no
+                                        size_hint: .25, .25
+                                        halign: "center"
+                                        icon: "numeric-6"
+                                        theme_text_color: "Custom"
+                                        icon_color: "black"
+                                        md_bg_color: "gray"
+                                        icon_size: "40dp"
+                                        ###on_release: app.numeric(index=6)
+                                    MDIconButton:
+                                        id: no
+                                        size_hint: .25, .25
+                                        halign: "center"
+                                        icon: "minus"
+                                        theme_text_color: "Custom"
+                                        icon_color: "black"
+                                        md_bg_color: "gray"
+                                        icon_size: "40dp"
+                                        ###on_release: app.numeric(index="-")
+                                    MDIconButton:
+                                        id: no
+                                        size_hint: .25, .25
+                                        halign: "center"
+                                        icon: "numeric-7"
+                                        theme_text_color: "Custom"
+                                        icon_color: "black"
+                                        md_bg_color: "gray"
+                                        icon_size: "40dp"
+                                        ###on_release: app.numeric(index=7)
+                                    MDIconButton:
+                                        id: no
+                                        size_hint: .25, .25
+                                        halign: "center"
+                                        icon: "numeric-8"
+                                        theme_text_color: "Custom"
+                                        icon_color: "black"
+                                        md_bg_color: "gray"
+                                        icon_size: "40dp"
+                                        ###on_release: app.numeric(index=8)
+                                    MDIconButton:
+                                        id: no
+                                        size_hint: .25, .25
+                                        halign: "center"
+                                        icon: "numeric-9"
+                                        theme_text_color: "Custom"
+                                        icon_color: "black"
+                                        md_bg_color: "gray"
+                                        icon_size: "40dp"
+                                        ###on_release: app.numeric(index=9)
+                                    MDIconButton:
+                                        id: no
+                                        size_hint: .25, .25
+                                        halign: "center"
+                                        icon: "numeric-0"
+                                        theme_text_color: "Custom"
+                                        icon_color: "black"
+                                        md_bg_color: "gray"
+                                        icon_size: "40dp"
+                                        ###on_release: app.numeric(index=0)
+                                    MDIconButton:
+                                        id: no
+                                        size_hint: .25, .25
+                                        halign: "center"
+                                        icon: "plus"
+                                        theme_text_color: "Custom"
+                                        icon_color: "black"
+                                        md_bg_color: "gray"
+                                        icon_size: "40dp"
+                                        ###on_release: app.numeric(index="+")
+                                    
+                                    MDIconButton:
+                                        id: no
+                                        size_hint: .25, .25
+                                        halign: "center"
+                                        icon: "multiplication"
+                                        theme_text_color: "Custom"
+                                        icon_color: "black"
+                                        md_bg_color: "gray"
+                                        icon_size: "40dp"
+                                        ###on_release: app.numeric(index="*")
+                                    MDIconButton:
+                                        id: no
+                                        size_hint: .25, .25
+                                        halign: "center"
+                                        icon: "division"
+                                        theme_text_color: "Custom"
+                                        icon_color: "black"
+                                        md_bg_color: "gray"
+                                        icon_size: "40dp"
+                                        ###on_release: app.numeric(index="/")
+                                    MDIconButton:
+                                        id: no
+                                        size_hint: .25, .25
+                                        align: "center"
+                                        icon: "circle-small"
+                                        theme_text_color: "Custom"
+                                        icon_color: "black"
+                                        md_bg_color: "gray"
+                                        icon_size: "40dp"
+                                        ###on_release: app.numeric(index=".")
+                                    MDTextButton:
+                                        id: x 
+                                        text: "x"
+                                        theme_text_color: "Custom"
+                                        text_color: "black"
+                                        md_bg_color: "gray"
+                                        size_hint: .25, .25
+                                        halign: "center"
+                                        font_size: "20sp"
+                                        ###on_release: app.numeric("x")
+                                    MDTextButton:
+                                        id: racine_carre
+                                        text: "√"
+                                        theme_text_color: "Custom"
+                                        text_color: "black"
+                                        md_bg_color: "gray"
+                                        size_hint: .25, .25
+                                        halign: "center"
+                                        font_size: "20sp"
+                                        ###on_release: app.numeric("sqrt(")
+                                    MDTextButton:
+                                        id: puissance 
+                                        text: "x^"
+                                        theme_text_color: "Custom"
+                                        text_color: "black"
+                                        md_bg_color: "gray"
+                                        size_hint: .25, .25
+                                        halign: "center"
+                                        font_size: "20sp"
+                                        ###on_release: app.numeric("x^(")
+                                    MDTextButton:
+                                        id:  exponentiel
+                                        text: "e"
+                                        theme_text_color: "Custom"
+                                        text_color: "black"
+                                        md_bg_color: "gray"
+                                        size_hint: .25, .25
+                                        halign: "center"
+                                        font_size: "20sp"
+                                        ###on_release: app.numeric("exp(")
+                                    MDTextButton:
+                                        id: ln 
+                                        text: "ln(x)"
+                                        theme_text_color: "Custom"
+                                        text_color: "black"
+                                        md_bg_color: "gray"
+                                        size_hint: .25, .25
+                                        halign: "center"
+                                        font_size: "20sp"
+                                        ###on_release: app.numeric("ln(")
+                                    MDTextButton:
+                                        id: ln1
+                                        text: "ln²(x)"
+                                        theme_text_color: "Custom"
+                                        text_color: "black"
+                                        md_bg_color: "gray"
+                                        size_hint: .25, .25
+                                        halign: "center"
+                                        font_size: "20sp"
+                                        ###on_release: app.numeric("ln²(")
+                                    MDTextButton:
+                                        id: parenth1 
+                                        text: "("
+                                        theme_text_color: "Custom"
+                                        text_color: "black"
+                                        md_bg_color: "gray"
+                                        size_hint: .25, .25
+                                        halign: "center"
+                                        font_size: "20sp"
+                                        ###on_release: app.numeric("(")
+                                    MDTextButton:
+                                        id: parenth2
+                                        text: ")"
+                                        theme_text_color: "Custom"
+                                        text_color: "black"
+                                        md_bg_color: "gray"
+                                        size_hint: .25, .25
+                                        halign: "center"
+                                        font_size: "20sp"
+                                        ###on_release: app.numeric(")")
+                                    MDTextButton:
+                                        id: au_carre 
+                                        text: "^²"
+                                        theme_text_color: "Custom"
+                                        text_color: "black"
+                                        md_bg_color: "gray"
+                                        size_hint: .25, .25
+                                        halign: "center"
+                                        font_size: "20sp"
+                                        ###on_release: app.numeric("**(2)")
+                                    MDTextButton:
+                                        id: au_puiss 
+                                        text: "^(x)"
+                                        theme_text_color: "Custom"
+                                        text_color: "black"
+                                        md_bg_color: "gray"
+                                        size_hint: .25, .25
+                                        halign: "center"
+                                        font_size: "20sp"
+                                        ###on_release: app.numeric("**(")
+                                    MDTextButton:
+                                        id: equ
+                                        text: "(N/D)"
+                                        theme_text_color: "Custom"
+                                        text_color: "black"
+                                        md_bg_color: "gray"
+                                        size_hint: .25, .25
+                                        halign: "center"
+                                        font_size: "20sp"
+                                        ###on_release: app.fraction()
+                                    MDIconButton:
+                                        id: au_puiss 
+                                        icon: "pi"
+                                        theme_text_color: "Custom"
+                                        text_color: "black"
+                                        md_bg_color: "gray"
+                                        size_hint: .25, .25
+                                        halign: "center"
+                                        font_size: "20sp"
+                                        ###on_release: app.numeric("pi")
+                                    MDIconButton:
+                                        id: sin
+                                        icon: "math-sin"
+                                        theme_text_color: "Custom"
+                                        text_color: "black"
+                                        md_bg_color: "gray"
+                                        size_hint: .25, .25
+                                        halign: "center"
+                                        font_size: "20sp"
+                                        ###on_release: app.numeric("SIN(")
+                                    MDIconButton:
+                                        id: coq
+                                        icon: "math-cos"
+                                        theme_text_color: "Custom"
+                                        text_color: "black"
+                                        md_bg_color: "gray"
+                                        size_hint: .25, .25
+                                        halign: "center"
+                                        font_size: "20sp"
+                                        ###on_release: app.numeric("COS(")
+                                    MDIconButton:
+                                        id: sin
+                                        icon: "math-tan"
+                                        theme_text_color: "Custom"
+                                        text_color: "black"
+                                        md_bg_color: "gray"
+                                        size_hint: .25, .25
+                                        halign: "center"
+                                        font_size: "20sp"
+                                        ###on_release: app.numeric("TAN(")
+                                    MDTextButton:
+                                        id: clean_all
+                                        text: "CE"
+                                        theme_text_color: "Custom"
+                                        text_color: "black"
+                                        md_bg_color: "gray"
+                                        size_hint: .25, .25
+                                        halign: "center"
+                                        font_size: "20sp"
+                                        ###on_release: app.clean_executif_chang()
+            MDNavigationDrawer:
+                id: drawer_cha
+                orientation: "vertical"
+
+                #opening_transition: "out_bounce"
+                #opening_time: 2
+                #closing_transition: "out_bounce"
+                #closing_time: 2
+                MDLabel:
+                    id: app_name
+                    text: "Opération Mathematique"
+                    pos_hint: {"center_x": .5, "center_y": .9}
+                    size_hint: 1, None
+                    bold: True
+                    halign: "center"
+                    theme_text_color: "Custom"
+                    text_color: "gray"
+                    font_style: "H5"
+                
+                MDScrollView:
+                    do_scroll_x: False
+                    do_scroll_y: True
+                    scroll_color: "gray"
+                    scroll_size_y: 1.2
+                    pos_hint : {"center_x": .5, "center_y": .5}
+                    
+                    MDList:
+                        pos_hint: {"center_x": .5, "center_y": .5}
+                        OneLineAvatarListItem:
+                            id: home
+                            text: "Accueil"
+                            size_hint_y: None
+                            theme_text_color: "Custom"
+                            text_color: "black"
+                            font_size: "14sp"
+                            ###on_release:
+                                # drawer_cha.set_state("close")
+                                # scr_cha.transition.direction = "left"
+                                # scr_cha.current = "nom_operation"
+                                # app.clean_executif_chang()
+                            IconLeftWidget:
+                                icon: "home"
+                                
+                                ###on_release:
+                        OneLineAvatarListItem:
+                            id: operation_1
+                            text: "Simplifier une expression"
+                            size_hint_y: None
+                            theme_text_color: "Custom"
+                            text_color: "black"
+                            font_size: "14sp"
+                            ###on_release:
+                                # drawer_cha.set_state("close")
+                                # scr_cha.transition.direction = "left"
+                                # scr_cha.current = "operation_1"
+                                # operation_name.title = operation_1.text
+                                # app.clean_executif_chang()
+                            ImageLeftWidget:
+                                source:"image_simplification.jpg"
+                                ###on_release:
+                        OneLineAvatarListItem:
+                            id: operation_2
+                            text: "Dévélopper une expression"
+                            size_hint_y: None
+                            theme_text_color: "Custom"
+                            text_color: "black"
+                            font_size: "14sp"
+                            ###on_release:
+                                # drawer_cha.set_state("close")
+                                # scr_cha.transition.direction = "left"
+                                # scr_cha.current = "operation_1"
+                                # operation_name.title = operation_2.text
+                                # app.clean_executif_chang()
+                            ImageLeftWidget:
+                                source:"developpement_image.jpg"
+                                
+                                ###on_release:
+                        OneLineAvatarListItem:
+                            id: operation_f
+                            text: "Factoriser une expression"
+                            size_hint_y: None
+                            theme_text_color: "Custom"
+                            text_color: "black"
+                            font_size: "14sp"
+                            ###on_release:
+                                # drawer_cha.set_state("close")
+                                # scr_cha.transition.direction = "left"
+                                # scr_cha.current = "operation_1"
+                                # operation_name.title = operation_f.text
+                                # app.clean_executif_chang()
+                            ImageLeftWidget:
+                                source:"factorization_image.jpg"
+                                
+                                ###on_release:
+                        OneLineAvatarListItem:
+                            id: operation_3
+                            text: "Ensemble des solutions"
+                            size_hint_y: None
+                            theme_text_color: "Custom"
+                            text_color: "black"
+                            font_size: "14sp"
+                            ###on_release:
+                                # drawer_cha.set_state("close")
+                                # scr_cha.transition.direction = "left"
+                                # scr_cha.current = "operation_1"
+                                # operation_name.title = operation_3.text
+                                # app.clean_executif_chang()
+                            ImageLeftWidget:
+                                source:"ensemble_solution_image.jpg"
+                                
+                                ###on_release:
+                        OneLineAvatarListItem:
+                            id: operation_4
+                            text: "Dérivée d'une fonction"
+                            size_hint_y: None
+                            theme_text_color: "Custom"
+                            text_color: "black"
+                            font_size: "14sp"
+                            ###on_release:
+                                # drawer_cha.set_state("close")
+                                # scr_cha.transition.direction = "left"
+                                # scr_cha.current = "operation_1"
+                                # operation_name.title = operation_4.text
+                                # app.clean_executif_chang()
+                            ImageLeftWidget:
+                                source:"derive_image.png"
+                                
+                                ###on_release:
+                        OneLineAvatarListItem:
+                            id: operation_int
+                            text: "Integrale d'une fonction"
+                            size_hint_y: None
+                            theme_text_color: "Custom"
+                            text_color: "black"
+                            font_size: "14sp"
+                            ###on_release:
+                                # drawer_cha.set_state("close")
+                                # scr_cha.transition.direction = "left"
+                                # scr_cha.current = "operation_1"
+                                # operation_name.title = operation_int.text
+                                # app.clean_executif_chang()
+                            ImageLeftWidget:
+                                source:"primitive_image.jpg"
+                                ###on_release:
+                        OneLineAvatarListItem:
+                            id: operation_pri
+                            text: "Factoriel"
+                            size_hint_y: None
+                            theme_text_color: "Custom"
+                            text_color: "black"
+                            font_size: "14sp"
+                            ###on_release:
+                                # drawer_cha.set_state("close")
+                                # scr_cha.transition.direction = "left"
+                                # scr_cha.current = "operation_1"
+                                # operation_name.title = operation_pri.text
+                                # app.clean_executif_chang()
+                            ImageLeftWidget:
+                                source:"factoriel_image.jpg"
+                                ###on_release:
+                        OneLineAvatarListItem:
+                            id: operation_5
+                            text: "Tracer une courbe"
+                            size_hint_y: None
+                            theme_text_color: "Custom"
+                            text_color: "black"
+                            font_size: "14sp"
+                            ###on_release:
+                                # app.non_disponible()
+                                # drawer_cha.set_state("close")
+                                # scr_cha.transition.direction = "left"
+                                # scr_cha.current = "operation_1"
+                                # operation_name.title = operation_5.text
+                                # app.clean_executif_chang()
+                            ImageLeftWidget:
+                                source:"courbe_image.png"
+                                
+                                ###on_release:
+                        OneLineAvatarListItem:
+                            id: more_app
+                            text: "Plus d'applications"
+                            size_hint_y: None
+                            theme_text_color: "Custom"
+                            text_color: "black"
+                            font_size: "14sp"
+                            ###on_release:
+                            IconLeftWidget:
+                                icon:"store"
+                                ###on_release:
+                        TwoLineAvatarListItem:
+                            id: master_info
+                            text: "High Dark"
+                            secondary_text: "High Dark Company of Digital Application"
+                            theme_text_color: "Custom"
+                            text_color: "black"
+                            opacity: 1
+                            secondary_text_color: "black"
+                            font_style: "H5"
+                            secondary_text_font_style: "subtitle"
+                            ###on_release:
+                                # drawer_cha.set_state("close")
+                                # scr_cha.transition.direction = "left"
+                                # scr_cha.current = "about_us"
+                                # about_us_title.title = master_info.secondary_text
+                                # app.clean_executif_chang()
+                            ImageLeftWidget:
+                                source:"logo6_16_21816.png"
+                                ###on_release:
+                        OneLineIconListItem:
+                            id: share
+                            text: "Partager"
+                            ###on_release:
+                            IconLeftWidget:
+                                icon:"send"
+                                theme_text_color: "Custom"
+                                icon_color: "blue"
+                                
+                                md_bg_color: "gray"
+                                ###on_release:
+                        OneLineIconListItem:
+                            id: exit_button
+                            text: "Fermé"
+                            size_hint_y: None
+                            theme_text_color: "Custom"
+                            text_color: "black"
+                            font_size: "14sp"
+                            ###on_release: app.on_stop()
+                            IconLeftWidget:
+                                icon: "exit-run"
+                                ###on_release:
+                MDLabel:
+                    id: annee
+                    text: "2025"
+                    size_hint: 1, .05
+                    font_size: "10sp"
+                    pos_hint: {"center_x": .5, "y": .95}
+                    theme_text_color: "Custom"
+                    text_color: "black"
+                    halign: "center"
+                        

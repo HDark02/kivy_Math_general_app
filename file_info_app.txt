@@ -1,0 +1,13 @@
+Pour écrire une fonction, utilisez:
+
+(ln(x))**2  --> ln²(x)
+
+Dans "Ensemble des solutions d'une équation" l'équation est éguale à 0:
+Exemple:  x²-1=0  posez: x²-1 et executer
+x²-3x+4=0 posez: x²-3x+4 et executer
+
+Dans les versions futur il y aura plus d'amélioration.
+
+Pour certains résultats:
+## A ne pas confondre ##
+    25x²4 = 25x^(24) avec 25x² * 4
