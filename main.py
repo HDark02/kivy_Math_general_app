@@ -21,7 +21,7 @@ try:
     from kivmob import Kivmob
 except:
     pass
-# from sympy import expand, factor, sqrt, sympify, symbols, exp, sqrt, fraction, diff
+from sympy import expand, factor, sqrt, sympify, symbols, exp, sqrt, fraction, diff
 
 #Window.size = (464, 832)
 class school(MDApp):
