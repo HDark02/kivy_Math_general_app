@@ -80,4 +80,6 @@ Pour toute question ou problème, veuillez consulter le fichier `file_info_app.t
 
 Ce projet est sous licence MIT. Voir le fichier LICENSE pour plus de détails.
 
+##Exemple d'utilisation
+https://github.com/HDark02/kivy_Math_general_app/blob/main/bandicam%202025-03-15%2011-10-59-972.mp4
 ---
