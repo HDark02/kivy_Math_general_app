@@ -78,9 +78,8 @@ Une interface conviviale pour des calculs rapides et précis."""
             expression_output=expression1
         return expression_output
     #### Avant d'application des ouf ecritures
-    def contater_nous(self, index):
-        if (index== 1) or (index == 2):
-            webbrowser.open("https://t.me/Thekingdynamo")
+    def contact_us(self, link):
+		webbrowser.open(link)
     def result_screen(self):
         with open("my_expression.py", "r") as file:
             expression_output=file.read()
