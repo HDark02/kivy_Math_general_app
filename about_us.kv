@@ -1,56 +1,91 @@
 Screen:
-	name: "about_us"
-	MDFloatLayout:
-		md_bg_color: "black"
-		Image:
-			source: "logo6_16_21816.png"
-			size_hint: 1, 1
-			pos_hint: {"center_x": .5, "center_x": .5}
-		MDTopAppBar:
-			title: "Contacter Nous"
-			pos_hint: {"top":1}
-			right_action_items: [["close", lambda x: app.go_back()]]
-			padding: 10
-			md_bg_color: "black"
-						
-		MDLabel:
-			id: thank_user
-			text: "C'est à avec plaisir que nous sachons que vous aimez nos produits."
-			theme_text_color: "Custom"
-			text_color: "white"
-			font_size: "18sp"
-			halign: "center"
-			pos_hint: {"center_y": .85, "center_x": .5}
-		MDLabel:
-			id: thank_user_feelback
-			text: "Merci d'envoyer vos avis à propos de nos produits,pour que ses derniers soient ameliorer."
-			theme_text_color: "Custom"
-			text_color: "white"
-			font_size: "18sp"
-			halign: "center"
-			pos_hint: {"center_y": .7, "center_x": .5}
-		MDLabel:
-			id: thank_user_new
-			text: "Merci de nous contacter :"
-			theme_text_color: "Custom"
-			text_color: "white"
-			font_size: "20sp"
-			halign: "center"
-			pos_hint: {"center_y": .25, "center_x": .5}
-		MDTextButton:
-			text: "Telegram:"
-			theme_text_color: "Custom"
-			text_color: "white"
-			font_size: "18sp"
-			halign: "center"
-			pos_hint: {"center_y": .12, "center_x": .15}
-			on_release:app.contater_nous(index=1)
+    name: "about_us"
+    MDFloatLayout:
+        md_bg_color: "black"
+        Image:
+            source: "logo6_16_21816.png"
+            size_hint: 1, 1
+            pos_hint: {"center_x": .5, "center_y": .55}
+        MDTopAppBar:
+            title: "Contacter Nous"
+            pos_hint: {"top":1}
+            right_action_items: [["close", lambda x: app.go_back()]]
+            padding: 10
+            md_bg_color: "black"
+                        
+        MDLabel:
+            id: thank_user
+            text: "C'est à avec plaisir que nous sachons que vous aimez nos produits."
+            theme_text_color: "Custom"
+            text_color: "white"
+            font_size: "18sp"
+            halign: "center"
+            pos_hint: {"center_y": .85, "center_x": .5}
+        MDLabel:
+            id: thank_user_feelback
+            text: "Merci d'envoyer vos avis à propos de nos produits,pour que ses derniers soient ameliorer."
+            theme_text_color: "Custom"
+            text_color: "white"
+            font_size: "18sp"
+            halign: "center"
+            pos_hint: {"center_y": .7, "center_x": .5}
+        MDLabel:
+            id: thank_user_new
+            text: "Merci de nous contacter :"
+            theme_text_color: "Custom"
+            text_color: "white"
+            font_size: "20sp"
+            halign: "center"
+            pos_hint: {"center_y": .4, "center_x": .5}
+        Link:
+            title: "Github"
+            link: "https://github.com/HDark02"
+            pos_hint: {"center_y": .35, "center_x": .5}
+        Link:
+            title: "Telegram"
+            link: "https://t.me/Thekingdynamo"
+            pos_hint: {"center_y": .3, "center_x": .5}
+        Link:
+            title: "Facebook"
+            link: "facebook.com/alexdynamo.dynamo/"
+            pos_hint: {"center_y": .25, "center_x": .5}
+        Link:
+            title: "Instagram"
+            link: "instagram.com/thekingdynamo/"
+            pos_hint: {"center_y": .2, "center_x": .5}
+        Link:
+            title: "Whatsapp"
+            link: "http://wa.me/+22897606374"
+            pos_hint: {"center_y": .15, "center_x": .5}
+        Link:
+            title: "Beacoin"
+            link: "beacons.page/thekingdynamo"
+            pos_hint: {"center_y": .1, "center_x": .5}
+        Link:
+            title: "Tiktok"
+            link: "https://www.tiktok.com/@codecraft"
+            pos_hint: {"center_y": .05, "center_x": .5}
+        
+            
+<Link@MDFloatLayout>:
+    size_hint:
+    title: ""
+    link: ""
+    MDTextButton:
+        text: root.title+" :"
+        theme_text_color: "Custom"
+        text_color: "white"
+        font_size: "18sp"
+        halign: "center"
+        pos_hint: {"center_y": .5, "center_x": .15}
+        on_release: app.contact_us(root.ids.lin.text)
 
-		MDTextButton:
-			text: "https://t.me/Thekingdynamo"
-			theme_text_color: "Custom"
-			text_color: "orange"
-			font_size: "18sp"
-			halign: "center"
-			pos_hint: {"center_y": .12, "center_x": .6}
-			on_release: app.contater_nous(index=2)
+    MDTextButton:
+        id: lin
+        text: root.link
+        theme_text_color: "Custom"
+        text_color: "orange"
+        font_size: "18sp"
+        halign: "center"
+        pos_hint: {"center_y": .5, "center_x": .6}
+        on_release: app.contact_us(lin.text)
