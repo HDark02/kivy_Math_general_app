@@ -81,5 +81,15 @@ Pour toute question ou problème, veuillez consulter le fichier `file_info_app.t
 Ce projet est sous licence MIT. Voir le fichier LICENSE pour plus de détails.
 
 ##Exemple d'utilisation
-https://github.com/HDark02/kivy_Math_general_app/blob/main/bandicam%202025-03-15%2011-10-59-972.mp4
+[Video](https://github.com/HDark02/kivy_Math_general_app/blob/main/bandicam%202025-03-15%2011-10-59-972.mp4)
+--- 
+## 📬 Contact
+
+Feel free to reach out if you have questions or want to contribute!
+---
+[Telegram](https://t.me/Thekingdynamo)
+[WhatsApp](https://wa.me/+22897606374)
+[Facebook](https://www.facebook.com/alexdynamo.dynamo/)
+[Instagram](https://www.instagram.com/thekingdynamo/)
+[Beacons](https://beacons.page/thekingdynamo)
 ---
