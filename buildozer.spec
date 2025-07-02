@@ -43,7 +43,7 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,kivy==2.1.0, kivymd==1.1.1, sdl2_ttf==2.0.15, pillow
+requirements = python3,kivy==2.1.0, kivymd==1.1.1, sdl2_ttf==2.0.15, pillow, mpmath, https://github.com/sympy/sympy.git , android, jnius, https://github.com/MichaelStott/KivMob/archive/refs/heads/master.zip
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
@@ -76,7 +76,7 @@ orientation = portrait
 # author = © Copyright Info
 
 # Kivy version to use
-osx.kivy_version = 2.2.0
+osx.kivy_version = 2.1.0
 
 #
 # Android specific
@@ -107,31 +107,13 @@ android.presplash_color = white
 android.permissions = INTERNET, ACCESS_NETWORK_STATE, ACCESS_WIFI_STATE
 
 # (list) features (adds uses-feature -tags to manifest)
-#android.features = android.hardware.usb.host
-
-# (int) Target Android API, should be as high as possible.
-#android.api = 31
-
-# (int) Minimum API your APK / AAB will support.
-#android.minapi = 21
-
-# (int) Android SDK version to use
-#android.sdk = 20
-
-# (str) Android NDK version to use
-#android.ndk = 23b
-
-# (int) Android NDK API to use. This is the minimum API your app will support, it should usually match android.minapi.
-#android.ndk_api = 21
-
-# (str) Android NDK directory (if empty, it will be automatically downloaded.)
-#android.ndk_path =
-
-# (str) Android SDK directory (if empty, it will be automatically downloaded.)
-#android.sdk_path =
-
-# (str) ANT directory (if empty, it will be automatically downloaded.)
-#android.ant_path =
+android.api = 33
+android.minapi = 21
+android.sdk = 33
+android.ndk = 25b
+android.gradle_dependencies = com.google.firebase:firebase-ads:21.4.0
+android.enable_androidx = True
+p4a.branch = master
 
 # (bool) If True, then skip trying to update the Android SDK
 # This can be useful to avoid excess Internet downloads or save time
