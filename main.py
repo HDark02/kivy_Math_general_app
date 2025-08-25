@@ -7,6 +7,7 @@ from kivymd.app import MDApp
 from kivy.lang import Builder
 from kivy.core.window import Window
 from kivymd.uix.screenmanager import ScreenManager
+from kivymd.uix.list import OneLineListItem, TwoLineListItem, OneLineAvatarIconListItem
 from kivymd.uix.dialog import MDDialog
 from kivy.clock import Clock
 import re as refind
@@ -252,6 +253,7 @@ if __name__ == "__main__":
         file.write("")
         file.close()
     school().run()
+
 
 
 
