@@ -1,15 +1,11 @@
-from kivymd.uix.label import MDLabel
 from kivymd.uix.button import MDRaisedButton
 import webbrowser
 import io
 from kivymd.toast import toast
 from kivymd.app import MDApp
 from kivy.lang import Builder
-from kivy.core.window import Window
 from kivymd.uix.screenmanager import ScreenManager
-from kivymd.uix.list import OneLineListItem, TwoLineListItem, OneLineAvatarIconListItem
 from kivymd.uix.dialog import MDDialog
-from kivy.clock import Clock
 import re as refind
 from math import cos as COS, sin as SIN, tan as TAN
 import sympy
@@ -18,13 +14,7 @@ x, y, z, t = symbols('x y z t')
 k, m, n = symbols('k m n', integer=True)
 f, g, h = symbols('f g h', cls=Function)
 sympy.init_printing()
-try:
-    from kivmob import Kivmob
-except:
-    pass
-# from sympy import expand, factor, sqrt, sympify, symbols, exp, sqrt, fraction, diff
 
-#Window.size = (464, 832)
 class school(MDApp):
     info_presentation2 = """Développement, factorisation, dérivée, primitive : toutes vos opérations mathématiques en un seul endroit.
 Simplifiez les expressions, factorisez les polynômes, calculez les dérivées et les primitives en toute simplicité.
@@ -80,7 +70,7 @@ Une interface conviviale pour des calculs rapides et précis."""
         return expression_output
     #### Avant d'application des ouf ecritures
     def contact_us(self, link):
-		webbrowser.open(link)
+        webbrowser.open(link)
     def result_screen(self):
         with open("my_expression.py", "r") as file:
             expression_output=file.read()
@@ -208,52 +198,18 @@ Une interface conviviale pour des calculs rapides et précis."""
     def non_disponible(self):
         toast("Non disponible dans cette version")
     def on_stop(self):
-        try:
-            self.ads.hide_banner()
-        except:
-            pass
         exit()
     def build(self):
         global screen_manager
-        #initialise
-        try:
-            self.ads = Kivmob("ca-app-pub-8803263812567783~9785836190")
-            self.ads.new_banner(
-                ad_id="ca-app-pub-8803263812567783/8211501276",
-                top_pos=False,
-                overlap=False
-            )
-            self.ads.request_banner()
-            self.ads.show_banner()
-        except:
-            pass
         screen_manager= ScreenManager()
-
         screen_manager.add_widget(Builder.load_file("operations_screen.kv"))
         return screen_manager
-    def on_pause(self):
-        try:
-            self.ads.hide_banner()
-        except:
-            pass
-    def on_resume(self):
-        try:
-            self.ads.show_banner()
-        except:
-            pass
-
-    def on_start(self):
-        try:
-            self.ads.show_banner()
-        except:
-            pass
     
 if __name__ == "__main__":
     with open("my_expression.py", "w") as file:
         file.write("")
         file.close()
     school().run()
-
 
 
 
