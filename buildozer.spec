@@ -11,7 +11,7 @@ source.include_exts = py,kv,png,jpg,jpeg,atlas,txt,json,ttf
 
 version = 1.0
 
-requirements = python3,kivy==2.1.0,kivymd==1.1.1,sympy
+requirements =requirements = python3, kivy==2.3.1, https://github.com/kivymd/KivyMD/archive/master.zip, exceptiongroup, asynckivy, asyncgui, materialyoucolor, android, materialshapes, pycairo1,sympy
 
 presplash.filename = mathafro_icon.png
 icon.filename = mathafro_icon.png
