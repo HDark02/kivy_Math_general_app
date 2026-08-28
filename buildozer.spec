@@ -17,14 +17,6 @@ presplash.filename = mathafro_icon.png
 icon.filename = mathafro_icon.png
 
 orientation = portrait
-
-fullscreen = 0
-
-
-# Aucune permission nécessaire pour la version actuelle
-# android.permissions =
-
-android.accept_sdk_license = True
 # change the major version of python used by the app
 osx.python_version = 3.10.5
 
