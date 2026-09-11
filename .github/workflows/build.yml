@@ -1,10 +1,7 @@
-name: MathAfro Android Build
+name: Android Build
 
 on:
   push:
-    branches:
-      - main
-  pull_request:
     branches:
       - main
   workflow_dispatch:
@@ -14,31 +11,36 @@ jobs:
     runs-on: ubuntu-22.04
 
     steps:
-
-      # Récupération du projet
-      - name: Checkout repository
+      # ---------------------------------------------------------
+      # 1. Récupérer le projet
+      # ---------------------------------------------------------
+      - name: Checkout
         uses: actions/checkout@v4
 
-      # Python 3.10.5
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.10.5"
-
-      # Java 17 pour Gradle
+      # ---------------------------------------------------------
+      # 2. Installer Java 17
+      # ---------------------------------------------------------
       - name: Setup Java 17
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
-          distribution: "temurin"
+          distribution: temurin
           java-version: "17"
 
-      # Dépendances système nécessaires à Buildozer
+      # ---------------------------------------------------------
+      # 3. Installer Python 3.10
+      # ---------------------------------------------------------
+      - name: Setup Python 3.10
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.10"
+
+      # ---------------------------------------------------------
+      # 4. Installer les dépendances système
+      # ---------------------------------------------------------
       - name: Install system dependencies
         run: |
           sudo apt-get update
-
           sudo apt-get install -y \
-            build-essential \
             git \
             zip \
             unzip \
@@ -46,47 +48,61 @@ jobs:
             automake \
             libtool \
             pkg-config \
+            zlib1g-dev \
+            libncurses5-dev \
+            libncursesw5-dev \
+            libtinfo5 \
             cmake \
             libffi-dev \
             libssl-dev \
-            zlib1g-dev \
-            libncurses5-dev \
-            libncursesw5-dev
-
-      # Installation de Buildozer et Cython
-      - name: Install Python dependencies
+            gettext \
+            autopoint
+      # ---------------------------------------------------------
+      # 5. Installer Buildozer
+      # ---------------------------------------------------------
+      - name: Install Buildozer
         run: |
-          python -m pip install --upgrade pip
-          python -m pip install buildozer
-          python -m pip install "cython==0.29.33"
-
-      # Cache Buildozer
+          python -m pip install --upgrade pip setuptools wheel
+          pip install \
+            buildozer==1.5.0 \
+            cython==0.29.33
+      # ---------------------------------------------------------
+      # 6. Cache Buildozer
+      # ---------------------------------------------------------
       - name: Cache Buildozer
         uses: actions/cache@v4
         with:
           path: |
             ~/.buildozer
-            .buildozer
+            ~/.gradle
           key: buildozer-${{ runner.os }}-${{ hashFiles('buildozer.spec') }}
           restore-keys: |
             buildozer-${{ runner.os }}-
-
-      # Vérification du buildozer.spec
-      - name: Check Buildozer configuration
+      # ---------------------------------------------------------
+      # 7. Nettoyer les anciens builds
+      # ---------------------------------------------------------
+      - name: Buildozer clean
         run: |
-          test -f buildozer.spec
-          echo "buildozer.spec trouvé."
-
-      # Construction de l'APK
+          buildozer android clean || true
+          rm -rf bin
+      # ---------------------------------------------------------
+      # 8. Construire l'APK Debug
+      # ---------------------------------------------------------
       - name: Build APK
         run: |
-          yes | buildozer -v android debug
-
-      # Upload de l'APK
+          buildozer -v android debug
+      # ---------------------------------------------------------
+      # 9. Afficher les fichiers générés
+      # ---------------------------------------------------------
+      - name: List APK
+        run: |
+          ls -lah bin/
+      # ---------------------------------------------------------
+      # 10. Publier l'APK comme artifact
+      # ---------------------------------------------------------
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: MathAfro-debug-apk
+          name: android-apk
           path: bin/*.apk
           if-no-files-found: error
-          retention-days: 7
