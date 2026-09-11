@@ -11,7 +11,7 @@ source.include_exts = py,kv,png,jpg,jpeg,atlas,txt,json,ttf
 
 version = 1.0
 
-requirements =requirements = python3, kivy==2.3.1, kivymd==1.1.1, mpmath==1.4.1, sympy==1.14.0
+requirements = python3, kivy==2.3.1, kivymd==1.1.1, mpmath==1.4.1, sympy==1.14.0
 
 presplash.filename = mathafro_icon.png
 icon.filename = mathafro_icon.png
